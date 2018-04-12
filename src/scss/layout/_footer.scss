@@ -1,0 +1,53 @@
+.footer{
+  position: relative;
+  padding: 10rem 0rem 5rem 0rem;
+  background-color: $color-offset--black;
+
+  .section-title{
+    .heading{
+      letter-spacing: 0.3rem;
+      word-spacing: 0.1rem;
+      font-size: 4.6rem;
+    }
+    .horizontal-line{
+      background-color: $color-offset--white;
+    }
+  }
+
+  @include element('information'){
+    display: flex;
+  }
+
+  @include element('list'){
+    width: 30%;
+    margin-bottom: 12rem;
+
+    &:last-of-type{
+      margin-left: 20%;
+
+      .footer__list__item__content{
+        margin-bottom: 4rem;
+      }
+    }
+
+    @include element('item'){
+      margin: 4rem;
+      line-height: 260%;
+      @include element('title'){
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 4rem;
+        font-family: $font-family--playfair;
+      }
+      @include element('contact'){
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  @include element('end'){
+    display: flex;
+    justify-content: space-between;
+  }
+}

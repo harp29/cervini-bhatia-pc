@@ -1,0 +1,93 @@
+
+/* Text Mixin */
+@mixin text($font-size,$weight,
+ $line-height, $text-align, $word-spacing,
+$letter-spacing, $color){
+  font-size: $font-size;
+  font-weight: $weight;
+  line-height: $line-height;
+  text-align: $text-align;
+  word-spacing: $word-spacing;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+/* BG Mixin */
+@mixin bg-image($background-image){
+  background: url($background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background-attachment: fixed;
+  background-position: center center;
+}
+
+@mixin element($element){
+  &__#{$element}{
+    @content;
+  }
+}
+
+@mixin modifier($modifier){
+  &--#{$modifier}{
+    @content;
+  }
+}
+
+/* Responsive Mixins */
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-large {
+    @media only screen and (min-width: 30em) { @content };    //480px
+  }
+  @if $breakpoint == for-tablet-portrait-up {
+    @media only screen and (min-width: 600px) { @content };    //600px
+}
+  @if $breakpoint == for-tablet-landscape-up {
+    @media only screen and (min-width: 900px) { @content };     //980px
+  }
+  @if $breakpoint == for-desktop-up {
+    @media only screen and (min-width: 1200px) { @content };    //1200px
+  }
+  @if $breakpoint == for-medium-desktop-up {
+    @media only screen and (min-width: 87.5em) { @content };    //1400
+  }
+  @if $breakpoint == for-big-desktop-up {
+    @media only screen and (min-width: 1800px) { @content };    //1800
+  }
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+
+

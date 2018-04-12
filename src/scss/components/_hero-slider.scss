@@ -1,0 +1,128 @@
+@import "../abstracts/mixins";
+
+/*
+  HERO SLIDER STYLES
+*/
+
+
+.slider{
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  top: 9.5vh;
+
+  // RESPONSIVE - PHONE
+  //@include respond(phone) {
+  //  padding: 3rem 5rem;
+  //}
+
+  @include element('slide'){
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
+  @include element('text-box'){
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    text-align: center;
+
+    @include element('staff-name'){
+      color: $color-offset--brown;
+    }
+
+    @include element('description'){
+      width: 100%;
+      margin: 0 auto;
+      color: $color-offset--white;
+    }
+
+    p, h1{
+      text-align: center;
+    }
+
+  }
+
+  @include element('img'){
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    -webkit-filter: saturate(0);
+
+    @include modifier('1'){
+      @include bg-image('../images/cervini-web.png');
+      background-size: contain;
+    }
+
+    @include modifier('2'){
+      @include bg-image('../images/bhatia-web.png');
+      background-size: contain;
+    }
+
+  }
+
+  @include element('arrows-navigation'){
+    background-color: $color-offset--darker-grey;
+    border-radius: 5rem;
+    display: flex;
+    position: absolute;
+    top: 2.5%;
+    transform: translateX(-50%);
+    left: 50%;
+
+    &:after{
+      content: '';
+      position: absolute;
+      height: 40%;
+      width: 1px;
+      background-color: $color-offset--dark-grey;
+      opacity: .3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .arrow{
+      cursor: pointer;
+      padding: 1.2rem 2.5rem;
+
+      @include modifier('left'){
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+      }
+
+      @include modifier('right'){
+
+      }
+    }
+
+  }
+}
+
+.slide-link-active{
+  color: $color-offset--white !important;
+}
+
+//.slide-active{
+//  opacity: 1;
+//
+//  visibility: visible;
+//}
+
+//@media only screen and (max-width: 37.5em) { @content };
+
+
+
+
+

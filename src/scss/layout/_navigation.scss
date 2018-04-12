@@ -1,0 +1,99 @@
+@import "../abstracts/mixins";
+/*
+  NAVIGATION STYLES
+*/
+
+.navigation{
+  position: fixed;
+  z-index: 3;
+
+  padding: 4rem 0rem;
+
+  width: 100%;
+
+
+  @include element('content-box'){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  // RESPONSIVE - PHONE
+  //@include respond('phone') {
+  //  padding: 3rem 5rem;
+  //}
+
+  //**NAVIGATION__LOGO-BOX STYLES**//
+  @include element('logo-box'){
+    cursor: pointer;
+  }
+
+  @include element('logo'){
+    width: 14rem;
+    padding-left: 1rem
+  }
+
+  @include element('links-box'){
+    display: none;
+    .link{
+      @include text(1.2rem, 300, 0%, center, 0, .1rem, inherit);
+      color: $color-offset--light-grey;
+      font-family: $font-family--playfair;
+      position: relative;
+      transition: color .2s ease-out;
+
+      &:after{
+        position: absolute;
+        bottom: -1.4rem;
+        right: 0;
+        content: '';
+        width: 0%;
+        height: 1px;
+        background-color: $color-offset--white;
+        transition: width .3s ease-out;
+      }
+
+      &:hover:after{
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+
+      &:hover{
+        color: $color-offset--white;
+      }
+
+      @include modifier('active'){
+        color: $color-offset--white;
+        cursor: text;
+
+        &:hover:after{
+          width: 0 !important;
+        }
+      }
+
+    }
+  }
+
+  //**NAVIGATION__LIST STYLES**//
+
+
+  //**NAVIGATION__ITEM STYLES**//
+  @include element('items'){
+    list-style-type: none;
+    cursor: pointer;
+    margin-right: 2.5rem;
+  }
+
+  @include element('hamburger-box'){
+    display: block;
+    margin-top: -1rem;
+    padding-right: 1rem;
+    .hamburger-holder{
+      #hamburger-border{
+        stroke: $color-offset--dark-grey;
+      }
+
+    }
+  }
+}
