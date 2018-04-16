@@ -23,10 +23,10 @@
   }
 
   @include modifier('cervini'){
-    @include bg-image('../images/cervini-web.png');
+    @include bg-image('../images/cervini-web-min.png');
   }
 
   @include modifier('bhatia'){
-    @include bg-image('../images/bhatia-web.png');
+    @include bg-image('../images/bhatia-web-min.png');
   }
 }

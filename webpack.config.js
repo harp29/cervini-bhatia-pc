@@ -100,7 +100,8 @@ module.exports = {
             minify: {
                 collapseWhitespace: true
             },
-            hash: true
+            hash: true,
+            excludeChunks: ['index']
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),

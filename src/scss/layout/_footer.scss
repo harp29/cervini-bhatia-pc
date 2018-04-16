@@ -16,23 +16,36 @@
 
   @include element('information'){
     display: flex;
+    flex-direction: column;
   }
 
   @include element('list'){
+    margin-bottom: 6rem;
     width: 30%;
-    margin-bottom: 12rem;
+    &:first-of-type{
+      width: 120%;
+    }
 
     &:last-of-type{
-      margin-left: 20%;
-
-      .footer__list__item__content{
-        margin-bottom: 4rem;
-      }
+      margin-bottom: 4rem;
+      width: 100%;
+      //
+      //.footer__list__item__content{
+      //  margin-bottom: 4rem;
+      //}
     }
 
     @include element('item'){
-      margin: 4rem;
       line-height: 260%;
+
+      &:first-of-type{
+        margin-bottom: 5rem;
+      }
+
+      a{
+        letter-spacing: 1px;
+        padding: 10px 8px;
+      }
       @include element('title'){
         text-transform: uppercase;
         font-size: 1.5rem;

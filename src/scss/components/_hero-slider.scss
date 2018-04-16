@@ -61,12 +61,12 @@
     -webkit-filter: saturate(0);
 
     @include modifier('1'){
-      @include bg-image('../images/cervini-web.png');
+      @include bg-image('../images/cervini-web-min.png');
       background-size: contain;
     }
 
     @include modifier('2'){
-      @include bg-image('../images/bhatia-web.png');
+      @include bg-image('../images/bhatia-web-min.png');
       background-size: contain;
     }
 

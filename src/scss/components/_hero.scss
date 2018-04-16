@@ -38,15 +38,7 @@
   }
 
     @include element('content-box'){
-      width: 50%;
-
-      @include respond('tab-port'){
-        width: 90%;
-      }
-
-      @include modifier('wider'){
-        width: 70%;
-      }
+      width: 85%;
 
       p{
         color: $color-offset--brown;

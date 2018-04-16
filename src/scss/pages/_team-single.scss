@@ -12,10 +12,10 @@
       left: 50%;
       transform:translateX(-50%);
       z-index: 1;
-      @include bg-image('../images/cervini-web.png');
+      @include bg-image('../images/cervini-web-min.png');
 
       @include modifier('shiwali'){
-        @include bg-image('../images/bhatia-web.png');
+        @include bg-image('../images/bhatia-web-min.png');
       }
     }
 
