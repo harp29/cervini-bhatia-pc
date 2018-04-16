@@ -103,6 +103,16 @@ module.exports = {
             hash: true,
             excludeChunks: ['index']
         }),
+        new htmlWebpackPlugin({
+            title: 'expertise',
+            template: './src/expertise.html',
+            filename: 'expertise.html',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            excludeChunks: ['index', 'about']
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new ExtractTextPlugin({
