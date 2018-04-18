@@ -1,8 +1,9 @@
 .back-to-top{
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
+  //padding-bottom: 10rem;
 
   @include element('image'){
-    background: url(../images/justice.png);
+    background: url('../images/justice.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

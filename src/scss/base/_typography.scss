@@ -20,10 +20,6 @@ body{
   @include text(8rem, 300, 90%, none, 1rem, 1.5rem, $color-offset--black);
   font-family: $font-family--playfair;
 
-  @include respond(phone) {
-    font-size: 6rem;
-  }
-
   // MODIFIERS
   @include modifier('secondary') {
     font-size: 3rem;
@@ -45,15 +41,14 @@ body{
 ///////////////////////////////////
 
 .paragraph{
-  @include text(1.8rem, 300, 150%, left, 0.1rem, 0.01rem, inherit);
+  @include text(2rem, 300, 150%, left, 0.1rem, 0.01rem, inherit);
 
   // MODIFIERS
-
   @include modifier('secondary'){
     font-size: 1.6rem;
   }
 
-  @include modifier('teritary'){
+  @include modifier('tertiary'){
     font-size: 1.4rem;
   }
 

@@ -51,10 +51,6 @@
         @include text(6.5rem, 300, 110%, left, .3rem, .1rem, inherit);
         text-transform: capitalize;
         font-family: $font-family--playfair;
-
-        @include respond('tab-port'){
-          font-size: 9.5rem;
-        }
       }
     }
   }

@@ -25,6 +25,8 @@ module.exports = {
     entry: {
         index: './src/js/index.js',
         about: './src/js/about.js',
+        expertise: './src/js/expertise.js',
+        team: './src/js/team.js',
         vendor: VENDOR_LIBS
     },
     output: {
@@ -91,7 +93,7 @@ module.exports = {
                 collapseWhitespace: true
             },
             hash: true,
-            excludeChunks: ['about']
+            excludeChunks: ['about', 'expertise', 'team']
         }),
         new htmlWebpackPlugin({
             title: 'about',
@@ -101,7 +103,7 @@ module.exports = {
                 collapseWhitespace: true
             },
             hash: true,
-            excludeChunks: ['index']
+            excludeChunks: ['index', 'expertise', 'team']
         }),
         new htmlWebpackPlugin({
             title: 'expertise',
@@ -111,7 +113,17 @@ module.exports = {
                 collapseWhitespace: true
             },
             hash: true,
-            excludeChunks: ['index', 'about']
+            excludeChunks: ['index', 'about', 'team']
+        }),
+        new htmlWebpackPlugin({
+            title: 'team',
+            template: './src/team.html',
+            filename: 'team.html',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            excludeChunks: ['index', 'about', 'expertise']
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
