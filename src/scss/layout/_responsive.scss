@@ -108,6 +108,16 @@ html{
   }
 }
 
+.about .circle-content-box .company-description {
+  @include for-tablet-portrait-up{
+    width: 60%;
+  }
+  @include for-big-desktop-up{
+    width: 30%;
+  }
+
+}
+
 /*
   ABOUT
 */
@@ -119,6 +129,7 @@ html{
     width: 40% !important;
   }
 }
+
 
 /*
   PAGE-LINK: COMPONENT
