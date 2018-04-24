@@ -17,18 +17,18 @@ body{
 ///////////////////////////////////
 
 .heading{
-  @include text(8rem, 300, 90%, none, 1rem, 1.5rem, $color-offset--black);
+  @include text(3rem, 300, 90%, none, .6rem, 1.5rem, $color-offset--black);
   font-family: $font-family--playfair;
 
   // MODIFIERS
   @include modifier('secondary') {
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: .1rem;
     text-transform: capitalize;
   }
 
   @include modifier('tertiary') {
-    font-size: 3rem;
+    font-size: 1rem;
     letter-spacing: 1.14rem;
   }
 }

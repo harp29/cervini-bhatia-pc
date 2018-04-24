@@ -2,37 +2,12 @@
 /*
   HTML STYLES
 */
-html{
-  @include for-tablet-landscape-up{
-    font-size: 50%;
-  }
-
-  @include for-desktop-up{
-    font-size: 70%;
-  }
-}
 
 
 /*
   NAVIGATION: LAYOUT
 */
-.navigation{
 
-  //links-box
-  @include element('links-box') {
-    @include for-tablet-portrait-up {
-      display: block;
-    }
-  }
-
-  //hamburger
-  @include element('hamburger-box') {
-    @include for-tablet-portrait-up {
-      display: none;
-    }
-  }
-
-}
 
 
 /*
@@ -41,33 +16,8 @@ html{
 .slider{
 
   //arrows navigation
-  @include element('arrows-navigation') {
-    @media only screen and (max-width: 768px) and (min-width: 768px){
-      top: -1.5%;
-    }
-
-    @include for-tablet-portrait-up {
-      bottom: 2.5%;
-      transform: translateY(-50%);
-      right: 6%;
-      left: auto;
-      top: auto;
-    }
-  }
 
   //text-box
-  @include element('text-box') {
-    @include element('description') {
-
-      @include for-tablet-portrait-up {
-        width: 75%;
-      }
-
-      @include for-big-desktop-up {
-        width: 50%;
-      }
-    }
-  }
 
 }
 
