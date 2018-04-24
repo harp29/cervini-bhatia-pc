@@ -7,10 +7,22 @@
   position: fixed;
   z-index: 3;
 
-  padding: 4rem 0rem;
+  padding: 1.5rem 0rem 0rem 0rem;
+
+  /* Landscape */
+  @media screen and (orientation:landscape) {
+    padding-top: 1rem !important;
+  }
+
+  @include for-tablet-portrait-up{
+    padding-top: 2rem !important;
+  }
+
+  @include for-desktop-up{
+    padding-top: 3.5rem !important;
+  }
 
   width: 100%;
-
 
   @include element('content-box'){
     display: flex;
@@ -29,22 +41,29 @@
   }
 
   @include element('logo'){
-    width: 14rem;
-    padding-left: 1rem
+    width: 10rem;
+
+    @include for-tablet-portrait-up{
+      width: 12rem;
+    }
   }
 
   @include element('links-box'){
     display: none;
+
+      @include for-desktop-up {
+        display: block;
+    }
+
     .link{
-      @include text(1.2rem, 300, 0%, center, 0, .1rem, inherit);
+      @include text(.8rem, 100, 0%, center, 0, .1rem, inherit);
       color: $color-offset--light-grey;
-      font-family: $font-family--playfair;
       position: relative;
       transition: color .2s ease-out;
 
       &:after{
         position: absolute;
-        bottom: -1.4rem;
+        bottom: -.8rem;
         right: 0;
         content: '';
         width: 0%;
@@ -71,7 +90,6 @@
           width: 0 !important;
         }
       }
-
     }
   }
 
@@ -87,11 +105,31 @@
 
   @include element('hamburger-box'){
     display: block;
-    margin-top: -1rem;
+    margin-top: -.5rem;
+
+      @include for-desktop-up {
+        display: none;
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 768px){
+      margin-top: - .5rem;
+    }
+
     padding-right: 1rem;
     .hamburger-holder{
       #hamburger-border{
         stroke: $color-offset--dark-grey;
+      }
+
+      svg{
+        @media only screen and (max-width: 768px) and (min-width: 768px){
+          width: 65px;
+          height: 65px;
+        }
+        //@media only screen and (max-width: 1024px) and (min-width: 1024px){
+        //  width: 67px;
+        //  height: 67px;
+        //}
       }
 
     }

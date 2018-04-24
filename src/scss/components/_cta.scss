@@ -12,11 +12,11 @@
   }
 
   margin: 0 auto;
-  padding: 2rem 5rem;
+  padding: 1.5rem 3.5rem;
 
   cursor: pointer;
 
-  @include text(1rem, 300, inherit, center, .5rem, .3rem, $color-offset--white);
+  @include text(.6rem, 300, inherit, center, .5rem, .9rem, $color-offset--white);
   font-family: $font-family--playfair;
   text-transform: uppercase;
 
