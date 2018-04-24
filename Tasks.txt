@@ -12,4 +12,4 @@ About Page - .circle-content-box .company-description {
 Expertise Page
 
 Post on github and send to client. Make video and post on instagram and facebook.
-10 minutes before..
+10 minutes before
